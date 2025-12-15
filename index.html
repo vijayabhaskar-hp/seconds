@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap5 Responsive Website</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <style>
+    /*==== css variables=====*/
+    :root{
+        --primary-color:#A82C48;
+        --secondary-color:#43121d;
+        --white-color:#fff;
+        --text-color:#555;
+        --text-grey:#999;
+        --black-color:#000;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    h1{
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--secondary-color);
+    }
+    h2{
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: var(--secondary-color);
+        line-height: 3rem;
+    }
+    h4{
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: var(--secondary-color);
+    }
+    .primary-button{
+        
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        color: var(--white-color);
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+        -webkit-transition: all .4s ease-out 0s;
+        -o-transition:all .4s ease-out 0s ;
+        -moz-transition:all .4s ease-out 0s ;
+    }
+    .secondary-button{
+        padding:10px 20px ;
+        background-color: var(--white-color);
+        border: 2px solid var(--white-color);
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+        text-transform: capitalize;
+        -webkit-transition: all .4s ease-out 0s;
+        -o-transition:all .4s ease-out 0s ;
+        -moz-transition:all .4s ease-out 0s ;
+    }
+    .primary-button:hover{
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+    .secondary-button:hover{
+        background-color: transparent;
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    .footer-section{
+        background-color:var(--primary-color);
+    }
+   .bg-banner {
+    background-image: url('./images/bg/bg-1.jpg');
+    aspect-ratio: 16/9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .bg-banner {
+        
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+}
+@media (max-width: 992px){
+    h1{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .primary-button{
+        font-size: 15px;
+    }
+    .secondary-button{
+        font-size: 15px;
+    }
+    h2{
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+}
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <!-- Left: Logo -->
+      <a class="navbar-brand d-flex align-items-center me-3" href="#">
+        <img src="https://via.placeholder.com/48x48.png?text=Logo" alt="logo" width="48" height="48" class="me-2 rounded">
+        <span class="fw-bold">BrandName</span>
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="mainNav">
+        <!-- Center: Links -->
+        <ul class="navbar-nav nav-center mx-auto text-center">
+          <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
+        </ul>
+
+        <!-- Right: Phone number -->
+        <div class="d-flex align-items-center">
+          <a href="tel:+911234567890" class="text-decoration-none fw-semibold text-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone me-2" viewBox="0 0 16 16">
+              <path d="M3.654 1.328a.678.678 0 0 1 .747-.157l2.522 1.01c.329.132.544.459.544.811v2.06c0 .32-.182.62-.46.757l-1.003.47a11.745 11.745 0 0 0 5.292 5.292l.47-1.003c.138-.278.436-.46.757-.46h2.06c.352 0 .679.215.811.544l1.01 2.522a.678.678 0 0 1-.157.747l-1.93 1.93A1.745 1.745 0 0 1 13.75 16C6.325 16 .75 10.425.75 3.0c0-.615.247-1.205.691-1.65L3.654 1.328z"/>
+            </svg>
+            +91 12345 67890
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!--hero section-->
+  <section class="py-3 hero-sec bg-banner">
+                
+    <div class="container w-100 d-block">
+        <div class="d-flex align-items-center">
+            <div class="col-lg-6">
+
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, ratione!</p>
+
+                <div class="d-flex gap-3 mt-3 py-3">
+                    <a href="#services" class="primary-button">Services</a>
+                    <a href="#services" class="secondary-button shadow-sm">Contact Us</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="py-5" style="background-color: var(--primary-color);">
+    <div class="container">
+        <div class="row text-white">
+
+            <div class="col-lg-3" >
+                <h4>
+                   <div class="content"><span></span>+</div> 
+                   <p class="text-white" >Projects</p>
+                </h4>
+            </div>
+            <div class="col-lg-3" >
+                <h4>
+                   <div class="content"><span></span>+</div> 
+                   <p>Projects</p>
+                </h4>
+            </div>
+            <div class="col-lg-3" >
+                <h4>
+                   <div class="content"><span></span>+</div> 
+                   <p>Projects</p>
+                </h4>
+            </div>
+            <div class="col-lg-3" >
+                <h4>
+                   <div class="content"><span></span>+</div> 
+                   <p>Projects</p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--about section-->
+<section class="py-5 g-3">
+    <div class="container">
+
+        <div class="row align-items-center ">
+
+            <div class="col-lg-7">
+                <img src="./images/img/img-1.png" class="img-fluid rounded w-75" alt="">
+            </div>
+
+            <div class="col-lg-5">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, in.</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus optio nihil inventore ex perferendis velit placeat aut ab asperiores ullam?</p>
+                <a href="" class="primary-button">Book Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--abiut section2-->
+<section>
+    <div class="container g-3">
+        <div class="d-flex justify-content-center align-items-center flex-lg-row flex-column gap-3">
+
+            <div class="col-lg-6 col-12 order-2 ">
+                <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, tempora!</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis pariatur cupiditate fuga modi voluptates placeat, enim ipsum corporis hic assumenda!</p>
+                <ul class="unstyle py-3">
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+                <a href="" class="primary-button">Services</a>
+            </div>
+            
+            <div class="col-lg-6 col-12 order-1 ">
+                <img src="/images/img/img-2.png" class="img-fluid  rounded" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--section3-->
+<section style="background-image: url(/images/bg/bg-2.jpg); background-size: cover; background-position: center;" class="py-5 w-100">
+    <div class="container">
+        <div class="d-flex flex-column  align-items-lg-center align-items-start text-lg-center ">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, praesentium!</h2>
+            <p class="mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure officia ad numquam nostrum <br>ipsum voluptatem dicta cumque non soluta voluptate?</p>
+            <a href="" class="primary-button mt-3">Click Here</a>
+        </div>
+    </div>
+</section>
+
+<!--section4-->
+<section>
+    <div class="container py-5">
+        <div class="text-lg-center text-start ">
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, asperiores. Lorem ipsum dolor sit amet.</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe voluptatem sequi laudantium totam. Vitae adipisci ipsa sit nobis. Dignissimos, minus.</p>
+            <a href="" class="primary-button"> Subscibe</a>
+        </div>
+    </div>
+</section>
+
+<!--section cards-->
+<section>
+    <div class="container mt-5">
+        <div class="d-flex flex-column  align-items-lg-center align-items-start text-lg-center ">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sunt, suscipit neque cum eum iste! Inventore veniam vel praesentium quaerat iusto impedit ipsa esse maiores.</p>
+        </div>
+
+        <div class="row pt-5">
+            <div class="col-lg-4">
+                <div class="card shadow border-0 pb-5">
+                    <img src="/images/img/img-3.jpg" class="img-fluid border-0 m-0 p-0 rounded" alt="">
+                    <div class="card-body py-3">
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <p class="mb-5">Time: 15 - 20 minutes | serves 1</p>
+                        <span>Rs.20k <del>Rs.30k</del> </span> <a href="" class="primary-button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow border-0 pb-5">
+                    <img src="/images/img/img-3.jpg" class="img-fluid border-0 m-0 p-0 rounded" alt="">
+                    <div class="card-body py-3">
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <p class="mb-5">Time: 15 - 20 minutes | serves 1</p>
+                        <span>Rs.20k <del>Rs.30k</del> </span> <a href="" class="primary-button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow border-0 pb-5">
+                    <img src="/images/img/img-3.jpg" class="img-fluid border-0 m-0 p-0 rounded" alt="">
+                    <div class="card-body py-3">
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <p class="mb-5">Time: 15 - 20 minutes | serves 1</p>
+                        <span>Rs.20k <del>Rs.30k</del> </span> <a href="" class="primary-button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--testimonial section-->
+<section style="background-color: var(--primary-color);" class="pt-5">
+    <div class="container">
+
+    </div>
+</section>
+
+<!--FAQ section-->
+<section>
+    <div class="container g-5">
+        <div class="row">
+            <div class="col-lg-6 row">
+                <span>~</span>
+                <div class="d-lfex flex-column">
+                    <div>
+                        <h4><span class="">~</span> ipsum dolor sit amet consectetur adipisicing elit. Minima, laudantium.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto quibusdam mollitia nesciunt eum itaque distinctio sit incidunt omnis asperiores facilis temporibus maiores consectetur soluta, nulla reprehenderit est quos autem.</p>
+                    </div>
+                    <div>
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, laudantium.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto quibusdam mollitia nesciunt eum itaque distinctio sit incidunt omnis asperiores facilis temporibus maiores consectetur soluta, nulla reprehenderit est quos autem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <span>~</span>
+                <div class="d-lfex flex-column">
+                    <div>
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, laudantium.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto quibusdam mollitia nesciunt eum itaque distinctio sit incidunt omnis asperiores facilis temporibus maiores consectetur soluta, nulla reprehenderit est quos autem.</p>
+                    </div>
+                    <div>
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, laudantium.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto quibusdam mollitia nesciunt eum itaque distinctio sit incidunt omnis asperiores facilis temporibus maiores consectetur soluta, nulla reprehenderit est quos autem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--attachment section-->
+<section style="background: url(./images/bg/bg-3.jpg) no-repeat center; background-size: cover; background-attachment: fixed; background-position: 0 70px; padding: 60px 0;">
+    <div class="container" >
+
+        <div class="row">
+            <div class="col-lg-9">
+                <h1 class="text-white fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid iusto magnam quibusdam!</h1>
+            </div>
+            <div class="col-lg-3">
+                <a href="" class="primary-button">SignUp</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--last section-->
+<section class="py-5">
+    <div class="container w-75 mx-auto text-center">
+        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, expedita?</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos nesciunt saepe voluptatem id nostrum nobis cupiditate provident libero! Aliquam, porro?</p>
+
+        <div class="row mt-3 gap-3">
+            <input type="text" class="form-control w-50">
+            <a href="" class="primary-button col-lg-3">Signup</a>
+        </div>
+    </div>
+</section>
+
+
+<!--footer section-->
+<section class="footer-section h-100 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+            <div class="d-flex flex-row text-white">
+
+            <p>Register</p>
+            <p>Register</p>
+            <p>Register</p>
+            <p>Register</p>
+
+        </div>
+        </div>
+
+        <div class="col-lg-6 col-12 text-start text-lg-end">
+            <div class="">
+            <a href="" class="text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="text-white"><i class="fab fa-instagram"></i></a>
+            <a href="" class="text-white"><i class="fab fa-youtube"></i></a>
+            <a href="" class="text-white"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-image: url(./images/bg/bg-1.jpg); background-size: cover; background-repeat: no repeat; background-position: center; min-height: 90vh;">
+    <div class="container">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-6">
+                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, perferendis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="text-lg-center text-start">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum dolor voluptas sunt incidunt consequatur et aut amet qui. Consequuntur voluptas distinctio voluptatum dignissimos dolore quisquam repudiandae temporibus cupiditate quaerat id!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum dolor voluptas sunt incidunt consequatur et aut amet qui. Consequuntur voluptas distinctio voluptatum dignissimos dolore quisquam repudiandae temporibus cupiditate quaerat id!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum dolor voluptas sunt incidunt consequatur et aut amet qui. Consequuntur voluptas distinctio voluptatum dignissimos dolore quisquam repudiandae temporibus cupiditate quaerat id!</p>
+        </div>
+    </div>
+</section>
+
+
+
+ 
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Put current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // NOTE: If your map iframe src is empty, replace with a real Google Maps embed link.
+    // Example embed src:
+    // "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.518... (truncated)"
+  </script>
+</body>
+</html>
