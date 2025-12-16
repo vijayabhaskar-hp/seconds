@@ -52,7 +52,7 @@
         font-size: 50px;
         font-weight: 800;
         text-transform: capitalize;
-        line-height: 80px;
+        line-height: 50px;
 
     }
     h1 span{
@@ -66,6 +66,20 @@
     }
     p{
         color: var(--white-color);
+    }
+
+    .nav-link:active, .nav-link:hover{
+        color: var(--primary-color);
+    }
+
+
+    /*scroll on*/
+
+    .scroll-on{
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #00a149;
     }
     .hero-section {
     width: 100%;
@@ -130,14 +144,29 @@
 .nav-link:hover{
     color: var(--primary-color);
 }
-.card-one img{
-    width: 300px;
-    height: 300px;
+
+
+/*our menu start*/
+.menu-card {
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card-two img{
-    width: 500px;
-    height: 500px;
+
+.menu-card img {
+    max-width: 120px;
+    margin: auto;
 }
+
+/* Hover effect (desktop only) */
+@media (hover: hover) {
+    .menu-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+}
+
+/*our menu end*/
 
 
 </style>
@@ -149,7 +178,7 @@
     <div class="container">
       <!-- Left: Logo -->
       <a class="navbar-brand d-flex align-items-center me-3" href="#">
-        <img src="https://via.placeholder.com/48x48.png?text=Logo" alt="logo" width="48" height="48" class="me-2 rounded">
+        <img src="./09_Foodies_Pizzas_images/images/logo.png" alt="logo" width="48" height="48" class="me-2 rounded">
         <span class="fw-bold">BrandName</span>
       </a>
 
@@ -195,55 +224,105 @@
 
 
 
-  <!--cards secction-->
+  <!--our menu secction-->
   <section class="py-5">
-    <div class="container">
-        <h3 class="text-center">Our menu</h3>
+  <div class="container">
 
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="./09_Foodies_Pizzas_images/images/img/category1.png" alt="">
-                <div class="card-body border-0" >
-                    <h3>pizza</h3>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <img src="./09_Foodies_Pizzas_images/images/img/category1.png" alt="">
-                <div class="card-body border-0" >
-                    <h3>pizza</h3>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <img src="./09_Foodies_Pizzas_images/images/img/category1.png" alt="">
-                <div class="card-body border-0" >
-                    <h3>pizza</h3>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <img src="./09_Foodies_Pizzas_images/images/img/category1.png" alt="">
-                <div class="card-body border-0" >
-                    <h3>pizza</h3>
-                </div>
-            </div>
+    <h3 class="text-center mb-4">Our Menu</h3>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Item 1 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="menu-card text-center">
+          <img
+            src="./09_Foodies_Pizzas_images/images/img/category1.png"
+            class="img-fluid"
+            alt="Pizza"
+          >
+          <h5 class="mt-3 text-capitalize">Pizza</h5>
         </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="menu-card text-center">
+          <img
+            src="./09_Foodies_Pizzas_images/images/img/category1.png"
+            class="img-fluid"
+            alt="Burger"
+          >
+          <h5 class="mt-3 text-capitalize">Burger</h5>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="menu-card text-center">
+          <img
+            src="./09_Foodies_Pizzas_images/images/img/category1.png"
+            class="img-fluid"
+            alt="Pasta"
+          >
+          <h5 class="mt-3 text-capitalize">Pasta</h5>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="menu-card text-center">
+          <img
+            src="./09_Foodies_Pizzas_images/images/img/category1.png"
+            class="img-fluid"
+            alt="Drinks"
+          >
+          <h5 class="mt-3 text-capitalize">Drinks</h5>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!--section card1-->
   <section class="bg-dark py-5 card-one">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
-                <img src="./09_Foodies_Pizzas_images/images/img/img-1.png" class="img-fluid rounded" alt="">
-            </div>
-            <div class="col-lg-5">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, maxime!</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eveniet sapiente nobis unde tenetur qui corrupti ad, minus blanditiis explicabo.</p>
-                <a href="" class="primary-button">Click Here</a>
-            </div>
-        </div>
+  <div class="container">
+
+    <div class="row align-items-center gy-4">
+
+      <!-- Image -->
+      <div class="col-12 col-lg-7 text-center">
+        <img
+          src="./09_Foodies_Pizzas_images/images/img/img-1.png"
+          class="img-fluid rounded"
+          alt="Food image"
+        >
+      </div>
+
+      <!-- Content -->
+      <div class="col-12 col-lg-5 text-center text-lg-start">
+        <h1 class="text-white mb-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, maxime!
+        </h1>
+
+        <p class="text-white-50 mb-4">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Quam eveniet sapiente nobis unde tenetur qui corrupti ad,
+          minus blanditiis explicabo.
+        </p>
+
+        <a href="#" class="primary-button">
+          Click Here
+        </a>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <!--section card2-->
   <section class="bg-dark card-two">
@@ -302,14 +381,7 @@
     </div>
   </section>
 
-  <!--explore food-->
-  <section class="py-5">
-    <div class="container w-75 w-sm-100 mx-sm-0 mx-auto align-items-center justify-content-lg-center d-flex flex-column justify-content-sm-start">
-        <h4>mollitia aspernatur dolor cumque, totam magnam earum dicta cum.</h4>
-        <p class="text-dark">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea similique repellat soluta commodi veritatis id atque mollitia tenetur! Corporis, cum! adipisicing elit. Debitis quam asperiores officia nisi dolorum possimus maiores odio cupiditate! Blanditiis, iusto. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis quod ducimus iure sit sunt dignissimos fugit fuga unde quibusdam in?</p>
-    </div>
-  </section>
-
+  
   <!--testimonial-->
   <section style="background-color: var(--secondary-color);" class="h-100">
     <div class="container">
@@ -373,7 +445,26 @@
   </div>
 
  
+<script>
+    //scroll bar
+    let nav =  document.querySelector(".navigation-wrap");
+    window.onscroll = function (){
+        if(document.documentElement.scrollTop > 20){
+            nav.classList.add("scroll-on");
+        }else{
+            nav.classList.remove("scroll-on");
+        }
+    }
 
+    //nav hide
+    let navBar = document.querySelectorAll(".nav-link");
+    let navCollapse = document.querySelector(".navbar-collapse.collapse");
+    navBar.forEach(function(a){
+        a.addEventListener("click", function(){
+            navCollapse.classList.remove("show");
+        })
+    })
+</script>
  
 
 
