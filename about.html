@@ -73,14 +73,7 @@
     }
 
 
-    /*scroll on*/
-
-    .scroll-on{
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: #00a149;
-    }
+   
     .hero-section {
     width: 100%;
     min-height: 100vh;          /* Full screen height */
@@ -114,7 +107,8 @@
         background-position: top;
         background-size: cover;
     }
-}@media (max-width: 576px) {
+}
+@media (max-width: 576px) {
     .hero-section {
         min-height: 70vh;       /* Adjust as needed */
         background-size: cover;
@@ -126,8 +120,8 @@
     }
 }
 
-
-.navigation-wrapper{
+ /*scroll on*/
+ .navigation-wrapper{
     position: fixed;
     top: 0;
     left: 0;
@@ -135,13 +129,31 @@
     z-index: 1000;
 
 }
+
+    .navigation-wrapper.scroll-on{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 0.125 1.075 0 rgba(0,0,0,0.9);
+        transition: all 0.5s ease-in-out 0s;
+    }
+    .navigation-wrapper.scroll-on .nav-link{
+        color: var(--balck-color);
+    }
+    .navigation-wrapper.scroll-on .nav-link:active,
+    .navigation-wrapper.scroll-on .nav-link:hover{
+        color: var(--primary-color);
+    }
+
 .nav-link{
     color: var(--white-color);
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
 }
-.nav-link:hover{
+.nav-link:hover, .nav-link:active{
     color: var(--primary-color);
 }
 
@@ -178,8 +190,8 @@
     <div class="container">
       <!-- Left: Logo -->
       <a class="navbar-brand d-flex align-items-center me-3" href="#">
-        <img src="./09_Foodies_Pizzas_images/images/logo.png" alt="logo" width="48" height="48" class="me-2 rounded">
-        <span class="fw-bold">BrandName</span>
+        <img src="./09_Foodies_Pizzas_images/images/logo.png" alt="logo" width="60" height="60" class="me-2 rounded">
+        <span class="fw-bold"></span>
       </a>
 
       <!-- Toggler -->
@@ -189,22 +201,14 @@
 
       <div class="collapse navbar-collapse justify-content-between" id="mainNav">
         <!-- Center: Links -->
-        <ul class="navbar-nav nav-center mx-auto text-center">
+        <ul class="navbar-nav nav-center ms-auto text-center">
           <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="ecom.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link px-3 primary-button" href="tel:97302482">Contact Now</a></li>
         </ul>
-
-        <!-- Right: Phone number -->
-        <div class="d-flex align-items-center">
-          <a href="tel:+911234567890" class="text-decoration-none fw-semibold text-dark">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone me-2" viewBox="0 0 16 16">
-              <path d="M3.654 1.328a.678.678 0 0 1 .747-.157l2.522 1.01c.329.132.544.459.544.811v2.06c0 .32-.182.62-.46.757l-1.003.47a11.745 11.745 0 0 0 5.292 5.292l.47-1.003c.138-.278.436-.46.757-.46h2.06c.352 0 .679.215.811.544l1.01 2.522a.678.678 0 0 1-.157.747l-1.93 1.93A1.745 1.745 0 0 1 13.75 16C6.325 16 .75 10.425.75 3.0c0-.615.247-1.205.691-1.65L3.654 1.328z"/>
-            </svg>
-            +91 12345 67890
-          </a>
-        </div>
       </div>
+
     </div>
   </nav>
 
@@ -447,14 +451,14 @@
  
 <script>
     //scroll bar
-    let nav =  document.querySelector(".navigation-wrap");
+    let nav =  document.querySelector(".navigation-wrapper");
     window.onscroll = function (){
         if(document.documentElement.scrollTop > 20){
             nav.classList.add("scroll-on");
         }else{
             nav.classList.remove("scroll-on");
         }
-    }
+    };
 
     //nav hide
     let navBar = document.querySelectorAll(".nav-link");
@@ -462,8 +466,8 @@
     navBar.forEach(function(a){
         a.addEventListener("click", function(){
             navCollapse.classList.remove("show");
-        })
-    })
+        });
+    });
 </script>
  
 
